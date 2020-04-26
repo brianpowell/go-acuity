@@ -5,7 +5,7 @@ Todo:
  Example Code:
  ```golang
 import (
-	"github.com/brianpowell/acuity"
+	"github.com/brianpowell/go-acuity"
 )
 
 func main() {
