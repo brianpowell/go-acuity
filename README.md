@@ -20,7 +20,16 @@ func main() {
     // "appointmentTypeID": 000,
     // "calendarID": 000,
   }
-  out, err := ac.GetAppointments() 
+  apptList, err := ac.GetAppointments() 
+
+
+  // Create the Appointment
+  body := ac.AppointmentBody{
+    FirstName: "John",
+    LastName: "Smith",
+    //...
+  }
+  appt, err := ac.PostAppointment(body) 
 }
  ```
  
