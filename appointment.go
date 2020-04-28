@@ -5,7 +5,6 @@
 package acuity
 
 import (
-	"strconv"
 	"time"
 )
 
@@ -38,12 +37,12 @@ func (a *Acuity) PostAppointment(body *AppointmentBody) (Appointment, error) {
 }
 
 // GetAppointment - get an appt
-func (a *Acuity) GetAppointment(id int) (Appointment, error) {
+func (a *Acuity) GetAppointment(id string) (Appointment, error) {
 	// Build the Request
 	req := Request{
 		Method: "GET",
 		URL:    "appointments/:id",
-		Params: map[string]string{"id": strconv.Itoa(id)},
+		Params: map[string]string{"id": id},
 	}
 	// Get the Appointment
 	out := Appointment{}
@@ -52,12 +51,12 @@ func (a *Acuity) GetAppointment(id int) (Appointment, error) {
 }
 
 // CancelAppointment - cancel an appt
-func (a *Acuity) CancelAppointment(id int) (Appointment, error) {
+func (a *Acuity) CancelAppointment(id string) (Appointment, error) {
 	// Build the Request
 	req := Request{
 		Method: "PUT",
 		URL:    "appointments/:id/cancel",
-		Params: map[string]string{"id": strconv.Itoa(id)},
+		Params: map[string]string{"id": id},
 	}
 	out := Appointment{}
 	err := a.request(req, &out)
@@ -65,12 +64,12 @@ func (a *Acuity) CancelAppointment(id int) (Appointment, error) {
 }
 
 // RescheduleAppointment - reschedule an appt
-func (a *Acuity) RescheduleAppointment(id int, datetime *time.Time) error {
+func (a *Acuity) RescheduleAppointment(id string, datetime *time.Time) error {
 	// Build the Request
 	req := Request{
 		Method: "PUT",
 		URL:    "appointments/:id/reschedule",
-		Params: map[string]string{"id": strconv.Itoa(id)},
+		Params: map[string]string{"id": id},
 		Body: map[string]interface{}{
 			"datetime": datetime,
 		},
@@ -80,12 +79,12 @@ func (a *Acuity) RescheduleAppointment(id int, datetime *time.Time) error {
 }
 
 // GetAppointmentPayments - get an appt's payments
-func (a *Acuity) GetAppointmentPayments(id int) ([]Payment, error) {
+func (a *Acuity) GetAppointmentPayments(id string) ([]Payment, error) {
 	// Build the Request
 	req := Request{
 		Method: "GET",
 		URL:    "appointments/:id/payments",
-		Params: map[string]string{"id": strconv.Itoa(id)},
+		Params: map[string]string{"id": id},
 	}
 	// Get the Payments
 	out := []Payment{}
@@ -94,7 +93,7 @@ func (a *Acuity) GetAppointmentPayments(id int) ([]Payment, error) {
 }
 
 // GetAppointmentAddOns - get an appt's payments
-func (a *Acuity) GetAppointmentAddOns(id int) ([]AddOn, error) {
+func (a *Acuity) GetAppointmentAddOns(id string) ([]AddOn, error) {
 	// Build the Request
 	req := Request{
 		Method: "GET",
@@ -107,7 +106,7 @@ func (a *Acuity) GetAppointmentAddOns(id int) ([]AddOn, error) {
 }
 
 // GetAppointmentTypes - get an appt's payments
-func (a *Acuity) GetAppointmentTypes(id int) ([]AppointmentType, error) {
+func (a *Acuity) GetAppointmentTypes(id string) ([]AppointmentType, error) {
 	// Build the Request
 	req := Request{
 		Method: "GET",

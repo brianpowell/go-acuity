@@ -4,8 +4,6 @@
 
 package acuity
 
-import "strconv"
-
 // GetOrders - pull list
 func (a *Acuity) GetOrders() ([]Order, error) {
 	// Build the Request
@@ -20,12 +18,12 @@ func (a *Acuity) GetOrders() ([]Order, error) {
 }
 
 // GetOrder - get an order
-func (a *Acuity) GetOrder(id int) (Order, error) {
+func (a *Acuity) GetOrder(id string) (Order, error) {
 	// Build the Request
 	req := Request{
 		Method: "GET",
 		URL:    "orders/:id",
-		Params: map[string]string{"id": strconv.Itoa(id)},
+		Params: map[string]string{"id": id},
 	}
 	// Get the Order
 	out := Order{}
