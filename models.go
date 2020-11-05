@@ -248,9 +248,9 @@ type (
 
 	// WebHook model for forms
 	Webhook struct {
-		ID            string `json:"id"`
-		Action        string `json:"action"`
-		CalendarID    string `json:"calendarID"`
-		AppointmentID string `json:"appointmentID"`
+		ID                string `json:"id"`
+		Action            string `json:"action"`
+		CalendarID        string `json:"calendarID"`
+		AppointmentTypeID string `json:"appointmentTypeID"`
 	}
 )
