@@ -245,4 +245,12 @@ type (
 		FieldID int    `json:"fieldID"`
 		Value   string `json:"value"`
 	}
+
+	// WebHook model for forms
+	Webhook struct {
+		ID            string `json:"id"`
+		Action        string `json:"action"`
+		CalendarID    string `json:"calendarID"`
+		AppointmentID string `json:"appointmentID"`
+	}
 )
