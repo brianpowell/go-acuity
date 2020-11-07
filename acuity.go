@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/adityarama1210/go-url-builder/src/builder"
+	"github.com/derekstavis/go-qs"
 )
 
 type (
@@ -64,7 +64,10 @@ func (a *Acuity) request(r Request, target interface{}) error {
 
 	// Build the URL and do the URL params + query
 	url := a.urlParms(a.config.baseURL+r.URL, r.Params)
-	url, _ = builder.CreateURLWithQuery(url, r.Query)
+	querystring, _ := qs.Marshal(r.Query)
+	if len(querystring) > 0 {
+		url = url + "?" + querystring
+	}
 
 	// Send the Request
 	client := &http.Client{}
