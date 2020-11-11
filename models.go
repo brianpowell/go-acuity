@@ -50,12 +50,12 @@ type (
 
 	// AppointmentBody Structure
 	AppointmentBody struct {
-		DateTime    string      `json:"datetime"`
-		ApptTypeID  int         `json:"appointmentTypeID"`
+		DateTime    string      `json:"datetime,omitempty"`
+		ApptTypeID  int         `json:"appointmentTypeID,omitempty"`
 		CalendarID  int         `json:"calendarID,omitempty"`
-		FirstName   string      `json:"firstName"`
-		LastName    string      `json:"lastName"`
-		Email       string      `json:"email"`
+		FirstName   string      `json:"firstName,omitempty"`
+		LastName    string      `json:"lastName,omitempty"`
+		Email       string      `json:"email,omitempty"`
 		Phone       string      `json:"phone,omitempty"`
 		Timezone    string      `json:"timezone,omitempty"`
 		Certificate string      `json:"certificate,omitempty"`
@@ -63,7 +63,6 @@ type (
 		Notes       string      `json:"notes,omitempty"`
 		AddOnIDs    []int       `json:"addonIDs,omitempty"`
 		Labels      []LabelPost `json:"labels,omitempty"`
-		Admin       bool        `json:"admin"`
 	}
 
 	// AppointmentType - model for type response

@@ -5,6 +5,7 @@
 package acuity
 
 import (
+	"strconv"
 	"time"
 )
 
@@ -28,6 +29,20 @@ func (a *Acuity) PostAppointment(body *AppointmentBody) (Appointment, error) {
 	req := Request{
 		Method: "POST",
 		URL:    "appointments",
+		Body:   body,
+	}
+	// Create the Appointment
+	out := Appointment{}
+	err := a.request(req, &out)
+	return out, err
+}
+
+// PutAppointment - update an appt
+func (a *Acuity) PutAppointment(id int, body *AppointmentBody) (Appointment, error) {
+	// Build the Request
+	req := Request{
+		Method: "PUT",
+		URL:    "appointments/" + strconv.Itoa(id),
 		Body:   body,
 	}
 	// Create the Appointment
