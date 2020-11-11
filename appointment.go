@@ -42,7 +42,8 @@ func (a *Acuity) PutAppointment(id int, body *AppointmentBody) (Appointment, err
 	// Build the Request
 	req := Request{
 		Method: "PUT",
-		URL:    "appointments/" + strconv.Itoa(id),
+		URL:    "appointments/:id",
+		Params: map[string]string{"id": strconv.Itoa(id)},
 		Body:   body,
 	}
 	// Create the Appointment
