@@ -19,7 +19,7 @@ func (a *Acuity) GetClients(query map[string]interface{}) ([]Client, error) {
 }
 
 // PostClient - create an appt
-func (a *Acuity) PostClient(body *ClientBody) (Client, error) {
+func (a *Acuity) PostClient(body ClientBody) (Client, error) {
 	// Build the Request
 	req := Request{
 		Method: "POST",
@@ -33,7 +33,7 @@ func (a *Acuity) PostClient(body *ClientBody) (Client, error) {
 }
 
 // PutClient - create an appt
-func (a *Acuity) PutClient(body *ClientBody) (Client, error) {
+func (a *Acuity) PutClient(body ClientBody) (Client, error) {
 	// Build the Request
 	req := Request{
 		Method: "POST",
