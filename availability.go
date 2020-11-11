@@ -47,7 +47,7 @@ func (a *Acuity) GetAvailabilityClasses(query map[string]interface{}) ([]Class, 
 }
 
 // AvailablityCheckTime - check single appt time
-func (a *Acuity) AvailablityCheckTime(body *AvailabilityCheckTimeBody) (AvailabilityCheckTime, error) {
+func (a *Acuity) AvailablityCheckTime(body AvailabilityCheckTimeBody) (AvailabilityCheckTime, error) {
 	// Build the Request
 	req := Request{
 		Method: "POST",

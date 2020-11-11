@@ -24,7 +24,7 @@ func (a *Acuity) GetAppointments(query map[string]interface{}) ([]Appointment, e
 }
 
 // PostAppointment - create an appt
-func (a *Acuity) PostAppointment(body *AppointmentBody) (Appointment, error) {
+func (a *Acuity) PostAppointment(body AppointmentBody) (Appointment, error) {
 	// Build the Request
 	req := Request{
 		Method: "POST",
@@ -38,7 +38,7 @@ func (a *Acuity) PostAppointment(body *AppointmentBody) (Appointment, error) {
 }
 
 // PutAppointment - update an appt
-func (a *Acuity) PutAppointment(id int, body *AppointmentBody) (Appointment, error) {
+func (a *Acuity) PutAppointment(id int, body AppointmentBody) (Appointment, error) {
 	// Build the Request
 	req := Request{
 		Method: "PUT",
