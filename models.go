@@ -57,7 +57,6 @@ type (
 		LastName    string      `json:"lastName,omitempty"`
 		Email       string      `json:"email,omitempty"`
 		Phone       string      `json:"phone,omitempty"`
-		Paid        string      `json:"paid,omitempty"`
 		Timezone    string      `json:"timezone,omitempty"`
 		Certificate string      `json:"certificate,omitempty"`
 		Fields      []FieldPost `json:"fields,omitempty"`
