@@ -37,6 +37,7 @@ type (
 		Duration            string  `json:"duration"`
 		Calendar            string  `json:"calendar"`
 		CalendarID          int     `json:"calendarID"`
+		Canceled            bool    `json:"canceled"`
 		CanClientCancel     bool    `json:"canClientCancel"`
 		CanClientReschedule bool    `json:"canClientReschedule"`
 		Location            string  `json:"location"`
