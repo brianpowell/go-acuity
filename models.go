@@ -27,6 +27,7 @@ type (
 		EndTime             string  `json:"endTime"`
 		DateCreated         string  `json:"dateCreated"`
 		DateTime            string  `json:"datetime"`
+		DateTimeCreated     string  `json:"datetimeCreated"`
 		Price               string  `json:"price"`
 		Paid                string  `json:"paid"`
 		AmountPaid          string  `json:"amountPaid"`
@@ -37,6 +38,7 @@ type (
 		Duration            string  `json:"duration"`
 		Calendar            string  `json:"calendar"`
 		CalendarID          int     `json:"calendarID"`
+		CalendarTimezone    string  `json:"calendarTimezone"`
 		Canceled            bool    `json:"canceled"`
 		CanClientCancel     bool    `json:"canClientCancel"`
 		CanClientReschedule bool    `json:"canClientReschedule"`
